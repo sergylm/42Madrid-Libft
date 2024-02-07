@@ -33,4 +33,6 @@ int	ft_tolower(int c);
 
 char *ft_strchr(const char *str, int c);
 
+char *ft_strrchr(const char *str, int c);
+
 #endif
