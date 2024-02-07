@@ -4,10 +4,11 @@ char *ft_strchr(const char *str, int c)
 {
     if (!c)
         return ((char *) str);
-    while (*str++)
+    while (*str)
     {
         if (*str == (char) c)
             return ((char *) str);
+        *str++;
     }
     return (NULL);
 }
