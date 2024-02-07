@@ -2,7 +2,6 @@
 
 char *ft_strchr(const char *str, int c)
 {
-
     if (!c)
         return ((char *) str);
     while (*str++)
