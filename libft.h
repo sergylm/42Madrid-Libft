@@ -1,7 +1,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
-# include "unistd.h"
-# include <stdio.h>
+# include <stdlib.h>
+# include <stdint.h>
 
 int	ft_isalpha(int c);
 
@@ -44,5 +44,7 @@ int ft_memcmp(const void *str1, const void *str2, size_t n);
 char *ft_strnstr(const char *big, const char *little, size_t n);
 
 int ft_atoi(const char *str);
+
+void *ft_calloc(size_t count, size_t n);
 
 #endif
