@@ -7,11 +7,14 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 
 	i = 0;
 	len = ft_strlen(src);
-	while (--n && src[i])
+	if (n != 0)
 	{
-		dst[i] = src[i];
-		i++;
+		while (--n && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	dst[i] = '\0';
 	return (len);
 }
