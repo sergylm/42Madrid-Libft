@@ -1,6 +1,6 @@
-# include "libft.h"
+#include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	unsigned char	*aux_dst;
 	unsigned char	*aux_src;
