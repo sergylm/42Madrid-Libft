@@ -49,4 +49,6 @@ void	*ft_calloc(size_t count, size_t n);
 
 char	*ft_strdup(const char *string);
 
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 #endif
