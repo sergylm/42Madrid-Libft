@@ -1,10 +1,10 @@
 #include "libft.h"
 
-char *ft_strdup(const char *str)
+char	*ft_strdup(const char *str)
 {
 	char	*result;
-	int	len;
-	int	i;
+	int		len;
+	int		i;
 
 	result = 0;
 	len = length((char *) str);
