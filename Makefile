@@ -5,10 +5,17 @@ SRC= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.
 
 OBJS= $(SRC:.c=.o)
 
+BONUS= ft_lstnew.c
+
+BONUSOBJ= $(BONUS:.c=.o)
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	@ar -crs $(NAME) $(OBJS)
+
+bonus: $(OBJS) $(BONUSOBJ)
+	@ar -crs $(NAME) $(OBJS) $(BONUSOBJ)
 
 %.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
@@ -21,6 +28,6 @@ fclean: clean
 
 re: fclean all
 
-	@ar r $(NAME) $(OBJS)
+	@ar r $(NAME) $(OBJ)
 
 .PHONY: all clean fclean re
