@@ -21,6 +21,6 @@ fclean: clean
 
 re: fclean all
 
-	@ar r $(NAME) $(OBJ)
+	@ar r $(NAME) $(OBJS)
 
 .PHONY: all clean fclean re
