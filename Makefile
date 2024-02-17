@@ -21,7 +21,7 @@ bonus: $(OBJS) $(BONUSOBJ)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -f $(OBJS) $(BONUSOBJ)
 
 fclean: clean
 	@rm -f $(NAME)
