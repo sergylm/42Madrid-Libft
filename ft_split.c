@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 int	count_parts(const char *s, char c)
 {
