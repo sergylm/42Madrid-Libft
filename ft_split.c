@@ -40,7 +40,7 @@ int	append_parts(char **matrix, const char *s, char c)
 			while (s[end] != c && s[end])
 				end++;
 			matrix[count++] = ft_substr(s, start, (end - start));
-			printf("\n-%d,%d-%s-\n", start, end - 1, matrix[count - 1]);
+			// printf("\n-%d,%d-%s-\n", start, end - 1, matrix[count - 1]);
 			if (!matrix[count - 1])
 				return (0);
 		}
@@ -55,7 +55,7 @@ char	**ft_split(char const *s, char c)
 
 	parts = count_parts(s, c);
 	result = ft_calloc(parts, sizeof(char *));
-	printf("%s\n%d\n", s, parts);
+	// printf("%s\n%d\n", s, parts);
 	if (!result)
 		return (NULL);
 	append_parts(result, s, c);
