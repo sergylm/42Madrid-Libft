@@ -21,42 +21,52 @@ int	count_parts(const char *s, char c)
 	return (count);
 }
 
-int	append_parts(char **matrix, const char *s, char c)
+void	**free_str(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+		free(s[i++]);
+	free(s);
+	return (NULL);
+}
+
+char	**append_parts(char **matrix, const char *s, char c)
 {
 	int	start;
 	int	end;
 	int	count;
 
-	count = 0;
 	end = 0;
+	count = 0;
 	while (s[end])
 	{
 		while (s[end] == c)
 			end++;
 		if (s[end] != c && s[end])
 		{
-			start = end;
-			while (s[end] != c && s[end])
-				end++;
-			matrix[count++] = ft_substr(s, start, (end - start));
-			if (!matrix[count - 1])
-				return (0);
+			start = 0;
+			while (s[end + start] != c && (s[end + start]))
+				start++;
+			matrix[count] = ft_substr(s, end, start);
+			if (!matrix[count++])
+				return ((char **) free_str(matrix));
+			end += start;
 		}
 	}
-	return (1);
+	return (matrix);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	char	parts;
+	int		parts;
 
 	parts = count_parts(s, c);
 	result = ft_calloc(parts + 1, sizeof(char *));
 	if (!result)
 		return (NULL);
-	append_parts(result, s, c);
-	if (!result)
-		return (NULL);
+	result = append_parts(result, s, c);
 	return (result);
 }
