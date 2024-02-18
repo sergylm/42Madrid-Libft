@@ -30,7 +30,7 @@ char	*ft_itoa(int n)
 	int		len;
 
 	if (n == 0)
-		return ("0");
+		return (ft_strdup("0"));
 	len = ft_intlen(n);
 	result = (char *) malloc(len + 1);
 	if (!result)
